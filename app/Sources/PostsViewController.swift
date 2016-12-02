@@ -31,10 +31,8 @@ class PostsViewController: UITableViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        unsubscribe = store.subscribe { [weak self] state in
-            if let strongSelf = self, let posts = state.postsBySubreddit[strongSelf.subreddit] {
-                self?.render(posts: posts)
-            }
+        unsubscribe = store.subscribe { state in
+            self.render(posts: state.postsBySubreddit[self.subreddit])
         }
     }
 
@@ -42,9 +40,11 @@ class PostsViewController: UITableViewController {
         unsubscribe?()
     }
 
-    private func render(posts: [String]) {
-        self.posts = posts
-        tableView.reloadData()
+    private func render(posts: [String]?) {
+        if let posts = posts {
+            self.posts = posts
+            tableView.reloadData()
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

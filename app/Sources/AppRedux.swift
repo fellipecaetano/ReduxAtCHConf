@@ -73,7 +73,9 @@ struct FetchPosts: Command {
                 posts: Post.from(subreddit: subredditAttributes).map({ $0.title }),
                 subreddit: self.subreddit
             )
-            dispatch(action)
+            DispatchQueue.main.async {
+                dispatch(action)
+            }
         }
         task.resume()
     }
