@@ -8,7 +8,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = UIViewController()
+        self.window?.rootViewController = UINavigationController(
+            rootViewController: SubredditsViewController()
+        )
         self.window?.makeKeyAndVisible()
         return true
     }
