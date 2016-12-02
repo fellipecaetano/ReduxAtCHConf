@@ -55,9 +55,9 @@
 		B37F14BE1DF1A2A600348A4C = {
 			isa = PBXGroup;
 			children = (
-				B37F14C91DF1A2A600348A4C /* RedditClient */,
-				B37F14D91DF1A2A600348A4C /* RedditClientTests */,
 				B37F14C81DF1A2A600348A4C /* Products */,
+				B37F14C91DF1A2A600348A4C /* Sources */,
+				B37F14D91DF1A2A600348A4C /* Tests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,24 +70,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B37F14C91DF1A2A600348A4C /* RedditClient */ = {
+		B37F14C91DF1A2A600348A4C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				B37F14CA1DF1A2A600348A4C /* AppDelegate.swift */,
 				B37F14CC1DF1A2A600348A4C /* Assets.xcassets */,
-				B37F14CE1DF1A2A600348A4C /* LaunchScreen.storyboard */,
 				B37F14D11DF1A2A600348A4C /* Info.plist */,
+				B37F14CE1DF1A2A600348A4C /* LaunchScreen.storyboard */,
 			);
-			path = RedditClient;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		B37F14D91DF1A2A600348A4C /* RedditClientTests */ = {
+		B37F14D91DF1A2A600348A4C /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B37F14DA1DF1A2A600348A4C /* RedditClientTests.swift */,
 				B37F14DC1DF1A2A600348A4C /* Info.plist */,
+				B37F14DA1DF1A2A600348A4C /* RedditClientTests.swift */,
 			);
-			path = RedditClientTests;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +223,7 @@
 				B37F14CF1DF1A2A600348A4C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -324,7 +325,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = RedditClient/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.chconf.RedditClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -337,7 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = RedditClient/Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.chconf.RedditClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,7 +352,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = RedditClientTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.chconf.RedditClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,7 +367,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = 8Q86GGRUX8;
-				INFOPLIST_FILE = RedditClientTests/Info.plist;
+				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.chconf.RedditClientTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -394,6 +395,7 @@
 				B37F14E11DF1A2A600348A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B37F14E21DF1A2A600348A4C /* Build configuration list for PBXNativeTarget "RedditClientTests" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +404,7 @@
 				B37F14E41DF1A2A600348A4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
