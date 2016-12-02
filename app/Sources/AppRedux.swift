@@ -3,11 +3,11 @@ import Redux
 struct AppState {
     let subreddits: [String]
     let selectedSubreddit: String?
-    let postsBySubreddit: [String: [String]]
+    let postsBySubreddit: [String: [Post]]
 
     init (subreddits: [String] = [],
           selectedSubreddit: String? = nil,
-          postsBySubreddit: [String: [String]] = [:]) {
+          postsBySubreddit: [String: [Post]] = [:]) {
         self.subreddits = subreddits
         self.selectedSubreddit = selectedSubreddit
         self.postsBySubreddit = postsBySubreddit
@@ -17,7 +17,7 @@ struct AppState {
 enum AppAction: Redux.Action {
     case receiveSubreddits([String])
     case selectSubreddit(String)
-    case receivePosts(posts: [String], subreddit: String)
+    case receivePosts(posts: [Post], subreddit: String)
 }
 
 func AppReducer(state: AppState, action: Action) -> AppState {
@@ -70,7 +70,7 @@ struct FetchPosts: Command {
                     return
             }
             let action = AppAction.receivePosts(
-                posts: Post.from(subreddit: subredditAttributes).map({ $0.title }),
+                posts: Post.from(subreddit: subredditAttributes),
                 subreddit: self.subreddit
             )
             DispatchQueue.main.async {

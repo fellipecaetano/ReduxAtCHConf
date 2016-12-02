@@ -7,7 +7,7 @@ class PostsViewController: UITableViewController {
     private let store: Store<AppState>
     private var unsubscribe: (() -> Void)?
 
-    private var posts = [String]()
+    private var posts = [Post]()
 
     init(subreddit: String, store: Store<AppState>) {
         self.subreddit = subreddit
@@ -40,7 +40,7 @@ class PostsViewController: UITableViewController {
         unsubscribe?()
     }
 
-    private func render(posts: [String]?) {
+    private func render(posts: [Post]?) {
         if let posts = posts {
             self.posts = posts
             tableView.reloadData()
@@ -56,7 +56,7 @@ class PostsViewController: UITableViewController {
         guard let typedCell = cell as? PostTableViewCell else {
             fatalError("Expected cell of type \(PostTableViewCell.self) but got \(type(of: cell))")
         }
-        typedCell.textLabel?.text = posts[indexPath.row]
+        typedCell.render(post: posts[indexPath.row])
         return typedCell
     }
 }

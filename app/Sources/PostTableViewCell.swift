@@ -16,4 +16,8 @@ class PostTableViewCell: UITableViewCell {
         selectionStyle = .none
         textLabel?.numberOfLines = 0
     }
+
+    func render(post: Post) {
+        textLabel?.text = post.title
+    }
 }
