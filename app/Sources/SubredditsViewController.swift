@@ -28,4 +28,9 @@ class SubredditsViewController: UITableViewController {
         cell.textLabel?.text = subreddits[indexPath.row]
         return cell
     }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let posts = PostsViewController(subreddit: subreddits[indexPath.row])
+        navigationController?.pushViewController(posts, animated: true)
+    }
 }
