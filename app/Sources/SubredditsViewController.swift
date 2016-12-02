@@ -50,7 +50,7 @@ class SubredditsViewController: UITableViewController {
 
     private func selectSubreddit(_ selectedSubreddit: String?) {
         if let selectedSubreddit = selectedSubreddit, self.selectedSubreddit != selectedSubreddit {
-            let posts = PostsViewController(subreddit: selectedSubreddit)
+            let posts = PostsViewController(subreddit: selectedSubreddit, store: store)
             navigationController?.pushViewController(posts, animated: true)
         }
 

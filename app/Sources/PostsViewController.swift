@@ -1,15 +1,17 @@
 import UIKit
+import Redux
 
 class PostsViewController: UITableViewController {
-    let posts = [
-        "Redux Fundamentals Part 2: Single Source of Truth",
-        "On updating parent component state, my child component constructor does not get called and child component state stays the same as before update",
-        "React Redux question regarding transition between two Components with the same Model",
-        "Wanna make calendar graph of contributions like on github? Use Chartify - Lightweight and customizable React.js chart component",
-        "React.JS Top 10 Articles in November"
-    ]
+    private let subreddit: String
 
-    init(subreddit: String) {
+    private let store: Store<AppState>
+    private var unsubscribe: (() -> Void)?
+
+    private var posts = [String]()
+
+    init(subreddit: String, store: Store<AppState>) {
+        self.subreddit = subreddit
+        self.store = store
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = subreddit
     }
@@ -24,6 +26,25 @@ class PostsViewController: UITableViewController {
         tableView.estimatedRowHeight = 44 // default row height
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
+
+        store.dispatch(FetchPosts(subreddit: subreddit))
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        unsubscribe = store.subscribe { [weak self] state in
+            if let strongSelf = self, let posts = state.postsBySubreddit[strongSelf.subreddit] {
+                self?.render(posts: posts)
+            }
+        }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        unsubscribe?()
+    }
+
+    private func render(posts: [String]) {
+        self.posts = posts
+        tableView.reloadData()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
