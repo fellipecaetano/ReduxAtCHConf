@@ -55,22 +55,30 @@ struct FetchSubreddits: Command {
 }
 
 struct FetchPosts: Command {
-    static let defaultPosts = [
-        "Redux Fundamentals Part 2: Single Source of Truth",
-        "On updating parent component state, my child component constructor does not get called and child component state stays the same as before update",
-        "React Redux question regarding transition between two Components with the same Model",
-        "Wanna make calendar graph of contributions like on github? Use Chartify - Lightweight and customizable React.js chart component",
-        "React.JS Top 10 Articles in November"
-    ]
-
     private let subreddit: String
+    private let session = URLSession.shared
 
     init (subreddit: String) {
         self.subreddit = subreddit
     }
 
     func run(state: () -> AppState, dispatch: @escaping (Action) -> Void) {
-        let action = AppAction.receivePosts(posts: FetchPosts.defaultPosts, subreddit: subreddit)
-        dispatch(action)
+        let task = session.dataTask(with: url) { data, response, error in
+            guard let data = data,
+                let json = try? JSONSerialization.jsonObject(with: data, options: []),
+                let subredditAttributes = json as? [String: Any] else {
+                    return
+            }
+            let action = AppAction.receivePosts(
+                posts: Post.from(subreddit: subredditAttributes).map({ $0.title }),
+                subreddit: self.subreddit
+            )
+            dispatch(action)
+        }
+        task.resume()
+    }
+
+    private var url: URL {
+        return URL(string: "http://www.reddit.com/r/\(subreddit).json")!
     }
 }
