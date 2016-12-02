@@ -27,6 +27,10 @@ class PostsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
 
+        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        tableView.backgroundView = activityIndicator
+        activityIndicator.startAnimating()
+
         store.dispatch(FetchPosts(subreddit: subreddit))
     }
 
