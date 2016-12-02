@@ -1,10 +1,15 @@
 import UIKit
+import Redux
 
 class SubredditsViewController: UITableViewController {
     private let cellReuseIdentifier = "SubredditTableViewCell"
-    private let subreddits = ["ios", "apple", "iphone", "swift"]
+    private var subreddits = ["ios", "apple", "iphone", "swift"]
+    private var selectedSubreddit: String?
+    private unowned let store: Store<AppState>
+    private var unsubscribe: (() -> Void)?
 
-    init() {
+    init(store: Store<AppState>) {
+        self.store = store
         super.init(nibName: nil, bundle: nil)
         navigationItem.title = "Subreddits"
     }
@@ -19,6 +24,24 @@ class SubredditsViewController: UITableViewController {
         tableView.tableFooterView = UIView()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        unsubscribe = store.subscribe { [weak self] state in
+            self?.render(subreddits: [], selectedSubreddit: state.selectedSubreddit)
+        }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        unsubscribe?()
+    }
+
+    private func render(subreddits: [String], selectedSubreddit: String?) {
+        if let selectedSubreddit = selectedSubreddit, self.selectedSubreddit != selectedSubreddit {
+            let posts = PostsViewController(subreddit: selectedSubreddit)
+            navigationController?.pushViewController(posts, animated: true)
+        }
+        self.selectedSubreddit = selectedSubreddit
+    }
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return subreddits.count
     }
@@ -30,7 +53,7 @@ class SubredditsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let posts = PostsViewController(subreddit: subreddits[indexPath.row])
-        navigationController?.pushViewController(posts, animated: true)
+        let selectedSubreddit = subreddits[indexPath.row]
+        store.dispatch(AppAction.selectSubreddit(selectedSubreddit))
     }
 }

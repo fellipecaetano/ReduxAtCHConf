@@ -16,6 +16,7 @@
 		B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */; };
 		B37F14ED1DF1C2A500348A4C /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */; };
 		B37F14EF1DF1C50B00348A4C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */; };
+		B37F14F11DF1C6AA00348A4C /* AppRedux.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14F01DF1C6AA00348A4C /* AppRedux.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsViewController.swift; sourceTree = "<group>"; };
 		B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B37F14F01DF1C6AA00348A4C /* AppRedux.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRedux.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */,
 				B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */,
 				B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */,
+				B37F14F01DF1C6AA00348A4C /* AppRedux.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B37F14ED1DF1C2A500348A4C /* PostsViewController.swift in Sources */,
+				B37F14F11DF1C6AA00348A4C /* AppRedux.swift in Sources */,
 				B37F14CB1DF1A2A600348A4C /* AppDelegate.swift in Sources */,
 				B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */,
 				B37F14EF1DF1C50B00348A4C /* PostTableViewCell.swift in Sources */,
