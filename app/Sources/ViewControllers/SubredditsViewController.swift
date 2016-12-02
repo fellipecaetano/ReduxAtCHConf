@@ -20,17 +20,20 @@ class SubredditsViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    override func loadView() {
+        super.loadView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         // Trick to clear trailing cell separators
         tableView.tableFooterView = UIView()
+    }
 
+    override func viewDidLoad() {
         store.dispatch(FetchSubreddits())
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        unsubscribe = store.subscribe { [weak self] state in
-            self?.render(subreddits: state.subreddits, selectedSubreddit: state.selectedSubreddit)
+        unsubscribe = store.subscribe { state in
+            self.render(subreddits: state.subreddits, selectedSubreddit: state.selectedSubreddit)
         }
     }
 
