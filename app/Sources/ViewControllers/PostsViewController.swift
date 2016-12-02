@@ -9,6 +9,8 @@ class PostsViewController: UITableViewController {
 
     private var posts = [Post]()
 
+    private var activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+
     init(subreddit: String, store: Store<AppState>) {
         self.subreddit = subreddit
         self.store = store
@@ -20,18 +22,19 @@ class PostsViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
+    override func loadView() {
+        super.loadView()
         tableView.register(PostTableViewCell.self, forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44 // default row height
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
-
-        let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         tableView.backgroundView = activityIndicator
-        activityIndicator.startAnimating()
+    }
 
+    override func viewDidLoad() {
         store.dispatch(FetchPosts(subreddit: subreddit))
+        activityIndicator.startAnimating()
     }
 
     override func viewWillAppear(_ animated: Bool) {
