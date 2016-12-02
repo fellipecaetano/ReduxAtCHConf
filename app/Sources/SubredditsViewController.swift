@@ -3,10 +3,12 @@ import Redux
 
 class SubredditsViewController: UITableViewController {
     private let cellReuseIdentifier = "SubredditTableViewCell"
-    private var subreddits = ["ios", "apple", "iphone", "swift"]
-    private var selectedSubreddit: String?
+
     private unowned let store: Store<AppState>
     private var unsubscribe: (() -> Void)?
+
+    private var subreddits = [String]()
+    private var selectedSubreddit: String?
 
     init(store: Store<AppState>) {
         self.store = store
@@ -22,11 +24,13 @@ class SubredditsViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         // Trick to clear trailing cell separators
         tableView.tableFooterView = UIView()
+
+        store.dispatch(FetchSubreddits())
     }
 
     override func viewWillAppear(_ animated: Bool) {
         unsubscribe = store.subscribe { [weak self] state in
-            self?.render(subreddits: [], selectedSubreddit: state.selectedSubreddit)
+            self?.render(subreddits: state.subreddits, selectedSubreddit: state.selectedSubreddit)
         }
     }
 
@@ -35,10 +39,21 @@ class SubredditsViewController: UITableViewController {
     }
 
     private func render(subreddits: [String], selectedSubreddit: String?) {
+        receiveSubreddits(subreddits)
+        selectSubreddit(selectedSubreddit)
+    }
+
+    private func receiveSubreddits(_ subreddits: [String]) {
+        self.subreddits = subreddits
+        tableView.reloadData()
+    }
+
+    private func selectSubreddit(_ selectedSubreddit: String?) {
         if let selectedSubreddit = selectedSubreddit, self.selectedSubreddit != selectedSubreddit {
             let posts = PostsViewController(subreddit: selectedSubreddit)
             navigationController?.pushViewController(posts, animated: true)
         }
+
         self.selectedSubreddit = selectedSubreddit
     }
 
