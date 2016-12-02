@@ -15,6 +15,7 @@
 		B37F14E71DF1A54800348A4C /* Redux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B37F14E51DF1A54800348A4C /* Redux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */; };
 		B37F14ED1DF1C2A500348A4C /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */; };
+		B37F14EF1DF1C50B00348A4C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B37F14E51DF1A54800348A4C /* Redux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Redux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsViewController.swift; sourceTree = "<group>"; };
 		B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				B37F14CE1DF1A2A600348A4C /* LaunchScreen.storyboard */,
 				B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */,
 				B37F14EC1DF1C2A500348A4C /* PostsViewController.swift */,
+				B37F14EE1DF1C50B00348A4C /* PostTableViewCell.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				B37F14ED1DF1C2A500348A4C /* PostsViewController.swift in Sources */,
 				B37F14CB1DF1A2A600348A4C /* AppDelegate.swift in Sources */,
 				B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */,
+				B37F14EF1DF1C50B00348A4C /* PostTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
