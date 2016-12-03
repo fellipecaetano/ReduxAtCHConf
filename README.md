@@ -27,15 +27,15 @@ This workshop follows participants through a very simple app that displays post 
 
 The project has a single dependency, which is [Redux.swift]@(https://github.com/fellipecaetano/Redux.swift). It was initially integrated to the project using [Carthage]@(https://github.com/Carthage/Carthage), but the build doesn't require Carthage to be installed. The following installation steps should suffice:
 
-I. Clone the desired branch using the following command
+1. Clone the desired branch using the following command
 ```shell
 git clone -b <branch> https://github.com/fellipecaetano/ReduxAtCHConf
 ```
 
-II. Enter the `app` directory
+2. Enter the `app` directory
 
-III. Use Xcode 8.0+ to open `RedditClient.xcworkspace`
+3. Use Xcode 8.0+ to open `RedditClient.xcworkspace`
 
-IV. Build and run
+4. Build and run
 
-V. There's no step 5
+5. There's no step 5
