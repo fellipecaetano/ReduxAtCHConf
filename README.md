@@ -2,6 +2,13 @@
 
 This repository houses both the bootstrap project and the reference implementation of a workshop about using [Redux](http://reduxjs.org) in iOS applications, which took place at the 2016 edition of the [CocoaHeads Conference Brazil](http://cocoaheadsconference.com.br).
 
+## Contents
+
+- [About the project](#about-the-project)
+- [Branching](#branching)
+- [Requirements](#requirements)
+- [Installation](#installation)
+
 ## About the project
 
 This workshop follows participants through a very simple app that displays post titles from a pre-determined list of Subreddits. Subreddits and posts are rendered in table views, and each subreddit's list of posts is pushed into a stack-based navigation upon subreddit selection.
