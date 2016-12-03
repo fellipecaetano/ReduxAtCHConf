@@ -15,6 +15,8 @@
 		B37F14E71DF1A54800348A4C /* Redux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B37F14E51DF1A54800348A4C /* Redux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */; };
 		B37F14F51DF1D04200348A4C /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14F41DF1D04200348A4C /* SwiftExtensions.swift */; };
+		B37F15161DF2E48100348A4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15151DF2E48100348A4C /* Post.swift */; };
+		B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15171DF2E4BB00348A4C /* PostsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		B37F14E51DF1A54800348A4C /* Redux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Redux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsViewController.swift; sourceTree = "<group>"; };
 		B37F14F41DF1D04200348A4C /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		B37F15151DF2E48100348A4C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		B37F15171DF2E4BB00348A4C /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,8 @@
 		B37F14F91DF1DA8C00348A4C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B37F15151DF2E48100348A4C /* Post.swift */,
+				B37F15171DF2E4BB00348A4C /* PostsService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -260,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */,
 				B37F14CB1DF1A2A600348A4C /* AppDelegate.swift in Sources */,
 				B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */,
 				B37F14F51DF1D04200348A4C /* SwiftExtensions.swift in Sources */,
+				B37F15161DF2E48100348A4C /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
