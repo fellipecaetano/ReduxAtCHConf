@@ -31,7 +31,7 @@ class PostsService {
             Post(title: "New iOS lockscreen bypass renders Activation Lock useless")
         ]
     ]
-    
+
     private let subreddit: String
 
     init (subreddit: String) {

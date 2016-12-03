@@ -17,6 +17,7 @@
 		B37F14F51DF1D04200348A4C /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F14F41DF1D04200348A4C /* SwiftExtensions.swift */; };
 		B37F15161DF2E48100348A4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15151DF2E48100348A4C /* Post.swift */; };
 		B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15171DF2E4BB00348A4C /* PostsService.swift */; };
+		B37F151A1DF2E86000348A4C /* SubredditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15191DF2E86000348A4C /* SubredditsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B37F14F41DF1D04200348A4C /* SwiftExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
 		B37F15151DF2E48100348A4C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B37F15171DF2E4BB00348A4C /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
+		B37F15191DF2E86000348A4C /* SubredditsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				B37F15151DF2E48100348A4C /* Post.swift */,
 				B37F15171DF2E4BB00348A4C /* PostsService.swift */,
+				B37F15191DF2E86000348A4C /* SubredditsService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37F151A1DF2E86000348A4C /* SubredditsService.swift in Sources */,
 				B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */,
 				B37F14CB1DF1A2A600348A4C /* AppDelegate.swift in Sources */,
 				B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */,
