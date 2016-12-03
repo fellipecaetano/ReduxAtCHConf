@@ -18,6 +18,9 @@
 		B37F15161DF2E48100348A4C /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15151DF2E48100348A4C /* Post.swift */; };
 		B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15171DF2E4BB00348A4C /* PostsService.swift */; };
 		B37F151A1DF2E86000348A4C /* SubredditsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F15191DF2E86000348A4C /* SubredditsService.swift */; };
+		B37F151C1DF2E9E800348A4C /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F151B1DF2E9E800348A4C /* PostsViewController.swift */; };
+		B37F151E1DF2EA0800348A4C /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F151D1DF2EA0800348A4C /* PostTableViewCell.swift */; };
+		B37F15201DF2EA5C00348A4C /* ReduxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37F151F1DF2EA5C00348A4C /* ReduxExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		B37F15151DF2E48100348A4C /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		B37F15171DF2E4BB00348A4C /* PostsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsService.swift; sourceTree = "<group>"; };
 		B37F15191DF2E86000348A4C /* SubredditsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditsService.swift; sourceTree = "<group>"; };
+		B37F151B1DF2E9E800348A4C /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
+		B37F151D1DF2EA0800348A4C /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		B37F151F1DF2EA5C00348A4C /* ReduxExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReduxExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,7 @@
 		B37F14F81DF1DA8600348A4C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B37F151B1DF2E9E800348A4C /* PostsViewController.swift */,
 				B37F14EA1DF1A90E00348A4C /* SubredditsViewController.swift */,
 			);
 			path = ViewControllers;
@@ -153,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				B37F14F41DF1D04200348A4C /* SwiftExtensions.swift */,
+				B37F151F1DF2EA5C00348A4C /* ReduxExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 		B37F14FB1DF1DA9400348A4C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B37F151D1DF2EA0800348A4C /* PostTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -269,8 +278,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37F151C1DF2E9E800348A4C /* PostsViewController.swift in Sources */,
 				B37F151A1DF2E86000348A4C /* SubredditsService.swift in Sources */,
 				B37F15181DF2E4BB00348A4C /* PostsService.swift in Sources */,
+				B37F15201DF2EA5C00348A4C /* ReduxExtensions.swift in Sources */,
+				B37F151E1DF2EA0800348A4C /* PostTableViewCell.swift in Sources */,
 				B37F14CB1DF1A2A600348A4C /* AppDelegate.swift in Sources */,
 				B37F14EB1DF1A90E00348A4C /* SubredditsViewController.swift in Sources */,
 				B37F14F51DF1D04200348A4C /* SwiftExtensions.swift in Sources */,
