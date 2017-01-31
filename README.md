@@ -25,7 +25,7 @@ This workshop follows participants through a very simple app that displays post 
 
 ## Installation
 
-The project has a single dependency, which is [Redux.swift]@(https://github.com/fellipecaetano/Redux.swift). It was initially integrated to the project using [Carthage]@(https://github.com/Carthage/Carthage), but the build doesn't require Carthage to be installed. The following installation steps should suffice:
+The project has a single dependency, which is [Redux.swift](https://github.com/fellipecaetano/Redux.swift). It was initially integrated to the project using [Carthage](https://github.com/Carthage/Carthage), but the build doesn't require Carthage to be installed. The following installation steps should suffice:
 
 - Clone the desired branch using the following command
 ```shell
